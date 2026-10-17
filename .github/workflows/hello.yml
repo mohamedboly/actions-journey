@@ -1,8 +1,8 @@
-name: test workflow
+name: hello
 on: push
 jobs:
-  jobs1:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - name: et1
-        run: echo "hello world"
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
