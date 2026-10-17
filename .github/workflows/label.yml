@@ -1,0 +1,8 @@
+name: XFD
+on: push
+jobs:
+  format_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testh:
+        run: echo ${{format('build-{0}-{1}', github.run_number, github.ref_name )}}
