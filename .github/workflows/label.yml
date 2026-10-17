@@ -1,8 +1,8 @@
-name: XFD
+name: label
 on: push
 jobs:
-  format_job:
+  label:
     runs-on: ubuntu-latest
     steps:
-      - name: testh:
-        run: echo ${{format('build-{0}-{1}', github.run_number, github.ref_name )}}
+      - name: Print the run label
+        run: echo "${{ format('build-{0}-{1}', github.run_number, github.ref_name) }}"
