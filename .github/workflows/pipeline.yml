@@ -6,8 +6,8 @@ jobs:
     outputs:
       version: ${{steps.ver.outputs.version}}
     steps:
-      id: ver
-      - run: echo v1.2.3 >> $GITHUB_OUTPUT
+      - id: ver
+        run: echo v1.2.3 >> $GITHUB_OUTPUT
   test:
     runs-on: ubuntu-latest
     needs: build
