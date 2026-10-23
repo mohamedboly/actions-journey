@@ -1,16 +1,9 @@
-name: my_pipeline
+name: release
 on: push
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo lint
-  unit-tests:
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo unit-tests
-  package:
-    runs-on: ubuntu-latest
-    needs: [lint, unit-tests]
-    steps:
-      - run: echo build
+  notify:
+    uses: ./.github/workflows/notify.yml
+    with:
+      environment: staging
+    secrets:
+      NOTIFY_TOKEN: ${{ secrets.NOTIFY_TOKEN }}
